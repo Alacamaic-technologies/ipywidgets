@@ -9,7 +9,7 @@ conda deactivate
 conda remove --all -y -n releasewidgets
 rm -rf ipywidgets
 
-conda create -c conda-forge --override-channels -y -n releasewidgets notebook nodejs yarn twine jupyterlab=3 jupyter-packaging python-build jq
+conda create -c conda-forge --override-channels -y -n releasewidgets notebook nodejs "yarn==1.*" twine jupyterlab=3 jupyter-packaging python-build jq "python==3.9.*"
 conda activate releasewidgets
 
 git clone git@github.com:jupyter-widgets/ipywidgets.git
@@ -48,7 +48,7 @@ git pull origin main
 git reset --hard origin/main
 git clean -fdx
 yarn install
-yarn version
+yarn run bump
 # Check the latest commit to make sure it is correct
 yarn publish
 ```
@@ -124,8 +124,8 @@ Using the above script, you can do:
 Commit the changes you've made above, and include the uploaded files hashes in the commit message. Tag the release if ipywidgets was released. Push to origin `main` (and include the tag in the push), e.g:
 
 ```
-git tag 8.0.4
-git push origin main 8.0.4
+git tag 8.0.5
+git push origin main 8.0.5
 ```
 
 Update conda-forge packages (if the requirements changed to ipywidgets, make sure to update widgetsnbextension first).

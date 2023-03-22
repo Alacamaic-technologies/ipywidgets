@@ -29,7 +29,7 @@
     "sort-package-json": "lerna exec --stream --parallel sort-package-json && sort-package-json",
     "update-dependency": "update-dependency --lerna",
     "updated": "lerna updated",
-    "version": "yarn clean && yarn build && lerna version --no-push -m \"Bump version\" ",
+    "bump": "yarn clean && yarn build && lerna version --no-push -m \"Bump version\" ",
     "watch": "lerna run --stream watch"
   },
   "husky": {
@@ -49,7 +49,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^7.0.4",
-    "lerna": "^6.4.1",
+    "lerna": "^5.4.3",
     "lint-staged": "^12.1.3",
     "prettier": "^2.8.3",
     "sort-package-json": "^2.1.0",
